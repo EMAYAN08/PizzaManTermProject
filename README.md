@@ -15,47 +15,22 @@ An E-Commerce website for ordering Pizza Online
 1. React: To create the Single Page App
 2. React-Router: For Routing
 3. Redux: For State Management
-4. Firebase: As a DataBase
+4. AWS
 
-## Firebase Setup
+## Tech Stack
 
-You need to create a firebase configeration file holding the firebase settings in the path `/src/firebase/config.js`. The required format is:
+- Web Technologies: HTML, CSS, JavaScript
+- Framework: React.js
+- Cloud Services: AWS (Lambda, S3, DynamoDB, Cognito, CodeCommit, CodeBuild, CodePipeline, Route53, CloudFront, VPC, ALB, WAF, ACM, CloudFormation)
 
-```javascript
-const firebaseConfig = {
-	apiKey: "API-KEY",
-	authDomain: "AUTH-DOMAIN.firebaseapp.com",
-	databaseURL: "DATABASE-URL.firebaseio.com",
-	projectId: "PROJECT-ID",
-	storageBucket: "STORAGE-BUCKET.appspot.com",
-	messagingSenderId: "MESSAGING-SENDER-ID",
-	appId: "APP-ID",
-	measurementId: "MEASUREMENT-ID",
-};
+## Architecture Diagram
 
-export default firebaseConfig;
-```
-
-Data needs to be stored in the following format:
-
-```javascript
-[
-	{
-		name: "CATEGORY NAME",
-		items: [
-			{
-				desc: "PIZZA DESCRIPTION",
-				id: "ID",
-				img: "IMAGE LINK",
-				name: "PIZZA NAME",
-				price: 100, // PRICE
-			},
-		],
-	},
-];
-```
-
-An example data is given in `/src/firebase/exampleData.json`
+Architecture Diagram
+![Architecture Diagram](./Screenshots/ca2.jpg)
+Category of Services Used
+![Category of Services Used](./Screenshots/ca11.jpg)
+Adherence to AWS Well-Architected Framework
+![Adherence to AWS Well-Architected Framework](./Screenshots/ca3.jpg)
 
 ## How to Use
 
