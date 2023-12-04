@@ -12,8 +12,6 @@ Architecting An E-Commerce website for ordering Pizza Online on AWS.
 [Demo Video](https://drive.google.com/file/d/1D4QarNLOjilppqF8cS8mUhvze1rLG7aZ/view?usp=sharing)
 
 
-**NOTE:** The features shown in the demo is not exhaustive. Only the core features are showcased in the demo.
-
 ## Tools used
 
 1. React: To create the Single Page App
