@@ -1,6 +1,6 @@
 # Pizza Man Project
 
-An E-Commerce website for ordering Pizza Online
+Architecting An E-Commerce website for ordering Pizza Online on AWS.
 
 ## Demo
 
