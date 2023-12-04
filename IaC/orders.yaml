@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  OrdersTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: 'orders'
+      AttributeDefinitions:
+        - AttributeName: 'orderId'
+          AttributeType: 'N' # Assuming orderId is a number, change if it's a different type
+        - AttributeName: 'uid'
+          AttributeType: 'S' # Assuming uid is a string, change if it's a different type
+      KeySchema:
+        - AttributeName: 'orderId'
+          KeyType: 'HASH'
+        - AttributeName: 'uid'
+          KeyType: 'RANGE'
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5 # Adjust these values based on your expected read/write throughput

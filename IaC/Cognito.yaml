@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  PizzaManUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: PizzaMan
+      UsernameAttributes:
+        - email
+      AutoVerifiedAttributes:
+        - email
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: true
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: false
+        UnusedAccountValidityDays: 7
+      EmailConfiguration:
+        EmailSendingAccount: COGNITO_DEFAULT
+      VerificationMessageTemplate:
+        DefaultEmailOption: CONFIRM_WITH_LINK
+      UserAttributeUpdateSettings:
+        AttributesRequireVerificationBeforeUpdate:
+          - email
+      MfaConfiguration: "OFF"
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Name: verified_email
+            Priority: 1
+
+  PizzaManUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: PizzaManClient
+      UserPoolId: !Ref PizzaManUserPool
+      GenerateSecret: false  # Change to true if you need a client secret
+      ExplicitAuthFlows:
+        - ADMIN_NO_SRP_AUTH
+      PreventUserExistenceErrors: ENABLED
+      ReadAttributes:
+        - email
+      WriteAttributes:
+        - email
+
+  PizzaManUserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: pizzadomain  # Replace with your desired domain name
+      UserPoolId: !Ref PizzaManUserPool
