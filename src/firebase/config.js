@@ -12,10 +12,9 @@
 // export default firebaseConfig;
 
 const config = {
-	region: 'ca-central-1',
-	accessKeyId: 'AKIA4DSZ6XPBVFC7DA43',
-	secretAccessKey: 'bUbGr4WAq+Mrv+uezTmYMDfhCgVopgcYjpPQ6NL2',
-	// Add other DynamoDB-specific configurations as needed
+	region: 'YOUR-REGION',
+	accessKeyId: 'YOUR-ACCESS-KEY',
+	secretAccessKey: 'YOUR-SECRET-ACCESS-KEY',
     };
     
 export default config;
